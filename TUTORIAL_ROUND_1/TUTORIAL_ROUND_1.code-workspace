@@ -1,0 +1,13 @@
+{
+  "folders": [
+    {
+      "name": "TUTORIAL_ROUND_1",
+      "path": ".",
+    },
+    {
+      "name": "prosperity_rust_backtester-main",
+      "path": "../prosperity_rust_backtester-main",
+    },
+  ],
+  "settings": {},
+}
