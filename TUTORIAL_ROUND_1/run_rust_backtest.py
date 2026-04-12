@@ -192,6 +192,13 @@ def main() -> None:
     submission_png = next((p for p in png_paths if "submission" in p.name), None)
     latest_png = submission_png or (png_paths[-1] if png_paths else None)
     if latest_png is not None:
+        latest_trader_png = RESULTS_DIR / trader_name / f"latest-{trader_name}.png"
+        latest_summary_md = RESULTS_DIR / trader_name / f"latest-{trader_name}-summary.md"
+        latest_summary_csv = RESULTS_DIR / trader_name / f"latest-{trader_name}-summary.csv"
+        latest_trader_png.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(latest_png, latest_trader_png)
+        shutil.copyfile(run_summary_md, latest_summary_md)
+        shutil.copyfile(run_summary_csv, latest_summary_csv)
         shutil.copyfile(latest_png, WORKSPACE / "pnl_curve.png")
         print(f"Updated {latest_trader_png}")
         print(f"Updated {latest_summary_md}")

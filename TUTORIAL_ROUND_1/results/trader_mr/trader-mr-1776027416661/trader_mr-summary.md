@@ -1,0 +1,5 @@
+| Dataset | Day | Total PnL | EMERALDS | TOMATOES | Own Trades | Ticks |
+|---|---:|---:|---:|---:|---:|---:|
+| prices_round_0_day_-1 | -1 | 15393.00 | 7763.00 | 7630.00 | 807 | 10000 |
+| prices_round_0_day_-2 | -2 | 15763.50 | 7182.00 | 8581.50 | 755 | 10000 |
+| submission | -1 | 2348.50 | 1050.00 | 1298.50 | 136 | 2000 |

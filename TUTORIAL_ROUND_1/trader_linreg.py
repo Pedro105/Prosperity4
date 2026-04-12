@@ -29,7 +29,9 @@ PARAMS = {
         "take_inventory_skew": 0.07,
         "reservation_inventory_skew": 0.15,
         "flatten_threshold": 50,
-        "base_size": 22,
+        "calm_move_threshold": 3.0,
+        "base_size_calm": 30,
+        "base_size_volatile": 24,
         "min_size": 6,
         "size_position_step": 5,
         "baseline_micro_weight": 0.55,
@@ -42,6 +44,9 @@ PARAMS = {
         "confidence_quote_tighten": 0.18,
         "size_tilt_strength": 2,
         "size_tilt_threshold": 0.75,
+        "quote_edge_calm_mult": 0.95,
+        "quote_edge_volatile_mult": 1.50,
+        "quote_edge_volatility_bonus_mult": 0.16,
     },
 }
 # END PARAMS
@@ -59,7 +64,8 @@ LINEAR_MODEL = {
         "ret_6",
         "ema_gap",
         "mean_reversion_gap",
-        "avg_move"
+        "avg_move",
+        "ofi"
     ],
     "means": {
         "spread": 13.020064044831383,
@@ -71,7 +77,8 @@ LINEAR_MODEL = {
         "ret_6": -0.013109176423496448,
         "ema_gap": -0.020727826794256013,
         "mean_reversion_gap": 0.008660876460879789,
-        "avg_move": 1.5084262108475932
+        "avg_move": 1.5084262108475932,
+        "ofi": 0.0
     },
     "stds": {
         "spread": 1.7548667709940504,
@@ -83,21 +90,23 @@ LINEAR_MODEL = {
         "ret_6": 1.7664919020530114,
         "ema_gap": 0.9384403118565846,
         "mean_reversion_gap": 1.0019997260256968,
-        "avg_move": 0.05511465974572046
+        "avg_move": 0.05511465974572046,
+        "ofi": 1.4406445059223782
     },
     "coefficients": {
-        "spread": -0.03137141267023864,
-        "micro_minus_mid": -0.21342461466523852,
-        "imbalance_l1": 0.4665051480370547,
-        "imbalance_l3": -0.6695238469265514,
-        "ret_1": -0.026600857531249963,
-        "ret_3": 0.01488873123043606,
-        "ret_6": -0.004398198397041495,
-        "ema_gap": 0.015064334653624317,
-        "mean_reversion_gap": 0.10502344020404596,
-        "avg_move": 0.0031974208196821024
+        "spread": -0.030214795253108828,
+        "micro_minus_mid": -0.23004073888253473,
+        "imbalance_l1": 0.5119347353731523,
+        "imbalance_l3": -0.6626403146288246,
+        "ret_1": -0.045247571670889976,
+        "ret_3": 0.015245077749031997,
+        "ret_6": -0.004827083092773736,
+        "ema_gap": 0.013153644729879045,
+        "mean_reversion_gap": 0.09675371466394128,
+        "avg_move": 0.00269998161307615,
+        "ofi": -0.04467081053522986
     },
-    "intercept": -0.004486473865040763,
+    "intercept": -0.0044864738650407625,
     "target": "mean_future_mid_delta",
     "target_definition": "mean(mid[t+1:t+h]) - mid[t]",
     "horizon": 3,
@@ -117,6 +126,8 @@ class Trader:
         "ema": {"TOMATOES": None},
         "fast_ema": {"TOMATOES": None},
         "slow_ema": {"TOMATOES": None},
+        "prev_bid_vol": {"TOMATOES": None},
+        "prev_ask_vol": {"TOMATOES": None},
     }
 
     def run(self, state: TradingState):
@@ -315,6 +326,7 @@ class Trader:
         fast_ema: float,
         slow_ema: float,
         avg_move: float,
+        ofi: float,
     ) -> Dict[str, float]:
         best_bid, best_ask = self.best_bid_ask(order_depth)
         spread = 0.0 if best_bid is None or best_ask is None else float(best_ask - best_bid)
@@ -345,6 +357,7 @@ class Trader:
             "ema_gap": fast_ema - slow_ema,
             "mean_reversion_gap": ema - mid,
             "avg_move": avg_move,
+            "ofi": ofi,
         }
 
     def predict_tomatoes_delta(self, features: Dict[str, float]) -> float:
@@ -373,6 +386,17 @@ class Trader:
         micro = self.microprice(order_depth)
         if micro is None:
             micro = mid
+
+        current_bid_vol = order_depth.buy_orders.get(best_bid, 0)
+        current_ask_vol = -order_depth.sell_orders.get(best_ask, 0)
+        prev_bid_vol = memory["prev_bid_vol"]["TOMATOES"]
+        prev_ask_vol = memory["prev_ask_vol"]["TOMATOES"]
+        if prev_bid_vol is None or prev_ask_vol is None:
+            ofi = 0.0
+        else:
+            ofi = float((current_bid_vol - prev_bid_vol) - (current_ask_vol - prev_ask_vol))
+        memory["prev_bid_vol"]["TOMATOES"] = current_bid_vol
+        memory["prev_ask_vol"]["TOMATOES"] = current_ask_vol
 
         history = memory["mid_history"]["TOMATOES"]
         history.append(mid)
@@ -412,6 +436,7 @@ class Trader:
             fast_ema=fast_ema,
             slow_ema=slow_ema,
             avg_move=avg_move,
+            ofi=ofi,
         )
         predicted_delta = self.predict_tomatoes_delta(features)
         if abs(predicted_delta) < self.cfg(product, "signal_floor"):
@@ -432,6 +457,12 @@ class Trader:
             self.cfg(product, "quote_edge_floor"),
             self.cfg(product, "quote_edge_mult") * avg_move,
         )
+        calm_move_threshold = self.cfg(product, "calm_move_threshold")
+        if avg_move < calm_move_threshold:
+            quote_edge *= self.cfg(product, "quote_edge_calm_mult")
+        else:
+            quote_edge *= self.cfg(product, "quote_edge_volatile_mult")
+            quote_edge += self.cfg(product, "quote_edge_volatility_bonus_mult") * (avg_move - calm_move_threshold)
 
         confidence = min(1.0, abs(predicted_delta) / max(avg_move, 1.0))
         quote_edge *= max(
@@ -481,7 +512,11 @@ class Trader:
         buy_cap = limit - position
         sell_cap = limit + position
 
-        base_size = self.cfg(product, "base_size")
+        base_size = (
+            self.cfg(product, "base_size_calm")
+            if avg_move < calm_move_threshold
+            else self.cfg(product, "base_size_volatile")
+        )
         min_size = self.cfg(product, "min_size")
         size_position_step = self.cfg(product, "size_position_step")
         bid_size = self.clamp(base_size - max(position, 0) // size_position_step, min_size, buy_cap)
