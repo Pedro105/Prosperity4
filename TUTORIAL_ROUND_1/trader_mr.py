@@ -26,13 +26,13 @@ from datamodel import Listing, Observation, Order, OrderDepth, TradingState
 # TOMATOES — Mean Reversion
 EMA_WINDOW = 5
 REVERSION_BETA = -0.42
-TAKE_WIDTH = 1.5
+TAKE_WIDTH = 1
 CLEAR_WIDTH = 0
 DEFAULT_EDGE = 1
 JOIN_EDGE = 0
 DISREGARD_EDGE = 1
 PREVENT_ADVERSE = True
-ADVERSE_VOLUME = 15
+ADVERSE_VOLUME = 25
 EMA_ALPHA = 2.0 / (EMA_WINDOW + 1)
 
 # EMERALDS — copied from trader_linreg.py
