@@ -1,0 +1,31 @@
+{
+  "run_id": "trader-mr-1776069508233",
+  "trader": "trader_mr.py",
+  "dataset": "tutorial",
+  "results": [
+    {
+      "set": "D-2",
+      "day": -2,
+      "tick_count": 10000,
+      "own_trade_count": 532,
+      "final_pnl_total": 11559.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/TUTORIAL_ROUND_1/results/rust_runs/trader-mr-1776069508233/tutorial-day-2-*"
+    },
+    {
+      "set": "D-1",
+      "day": -1,
+      "tick_count": 10000,
+      "own_trade_count": 236,
+      "final_pnl_total": 4137.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/TUTORIAL_ROUND_1/results/rust_runs/trader-mr-1776069508233/tutorial-day-1-*"
+    },
+    {
+      "set": "SUB",
+      "day": -1,
+      "tick_count": 2000,
+      "own_trade_count": 49,
+      "final_pnl_total": 718.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/TUTORIAL_ROUND_1/results/rust_runs/trader-mr-1776069508233/tutorial-submission-day-1-*"
+    }
+  ]
+}
