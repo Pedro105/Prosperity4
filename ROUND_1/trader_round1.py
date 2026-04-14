@@ -20,20 +20,20 @@ OSMIUM = "ASH_COATED_OSMIUM"
 # Derived from simple linear regression on day -2, -1, 0 mid-prices.
 PEPPER_SLOPE = 0.0010000612960100698
 PEPPER_HALF_SPREAD = 2
-PEPPER_BUY_EDGE = 2
+PEPPER_BUY_EDGE = 10
 PEPPER_SELL_EDGE = 1
 PEPPER_SIZE = 20
-PEPPER_LATE_START = 900_000
-PEPPER_FINAL_UNWIND = 980_000
+PEPPER_LATE_START = 990_000
+PEPPER_FINAL_UNWIND = 999_000
 
 OSMIUM_BETA = -0.4952
-OSMIUM_EMA_ALPHA = 0.12
-OSMIUM_HALF_SPREAD = 3
-OSMIUM_TAKE_EDGE = 1
-OSMIUM_INV_SKEW = 0.10
+OSMIUM_EMA_ALPHA = 0.05
+OSMIUM_HALF_SPREAD = 1
+OSMIUM_TAKE_EDGE = 0
+OSMIUM_INV_SKEW = 0.00
 OSMIUM_SIZE = 14
 
-LIMITS = {PEPPER: 100, OSMIUM: 100}
+LIMITS = {PEPPER: 80, OSMIUM: 80}
 
 
 class Trader:
@@ -97,15 +97,15 @@ class Trader:
                     net -= qty
         return orders, net
 
-    def make_orders(self, product: str, fair: float, depth: OrderDepth, position: int, net_after_take: int, size: int, half_spread: float, inv_skew: float) -> List[Order]:
+    def make_orders(self, product: str, fair: float, depth: OrderDepth, position: int, net_after_take: int, half_spread: float, inv_skew: float) -> List[Order]:
         bid, ask = self.quote_prices(fair, half_spread, inv_skew, position + net_after_take, depth)
         buy_cap = LIMITS[product] - (position + max(net_after_take, 0))
         sell_cap = LIMITS[product] + (position + min(net_after_take, 0))
         orders: List[Order] = []
         if buy_cap > 0:
-            orders.append(Order(product, bid, min(size, buy_cap)))
+            orders.append(Order(product, bid, buy_cap))
         if sell_cap > 0:
-            orders.append(Order(product, ask, -min(size, sell_cap)))
+            orders.append(Order(product, ask, -sell_cap))
         return orders
 
     def trade_pepper(self, depth: OrderDepth, position: int, timestamp: int, memory: Dict[str, float]) -> List[Order]:
@@ -170,7 +170,7 @@ class Trader:
         mid = self.mid_price(depth)
         if mid is None:
             last_fair = memory.get("osmium_fair")
-            return [] if last_fair is None else self.make_orders(OSMIUM, last_fair, depth, position, 0, OSMIUM_SIZE, OSMIUM_HALF_SPREAD, OSMIUM_INV_SKEW)
+            return [] if last_fair is None else self.make_orders(OSMIUM, last_fair, depth, position, 0, OSMIUM_HALF_SPREAD, OSMIUM_INV_SKEW)
 
         prev_mean = memory.get("osmium_mean")
         mean = mid if prev_mean is None else OSMIUM_EMA_ALPHA * mid + (1.0 - OSMIUM_EMA_ALPHA) * prev_mean
@@ -179,5 +179,5 @@ class Trader:
         memory["osmium_fair"] = predicted
 
         take, net = self.take_orders(OSMIUM, predicted, OSMIUM_TAKE_EDGE, depth, position)
-        make = self.make_orders(OSMIUM, predicted, depth, position, net, OSMIUM_SIZE, OSMIUM_HALF_SPREAD, OSMIUM_INV_SKEW)
+        make = self.make_orders(OSMIUM, predicted, depth, position, net, OSMIUM_HALF_SPREAD, OSMIUM_INV_SKEW)
         return take + make
