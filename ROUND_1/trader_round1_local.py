@@ -116,7 +116,7 @@ def run_round1_backtest(trader_path: Path) -> Optional[Path]:
         f'DYLD_FALLBACK_LIBRARY_PATH="{python_libdir}:${{DYLD_FALLBACK_LIBRARY_PATH:-}}" '
         f'CARGO_TARGET_DIR="{cargo_target_dir}" '
         f'./scripts/cargo_local.sh run -- '
-        f'--trader "{trader_path}" --dataset "{WORKSPACE}" --artifact-mode diagnostic --flat '
+        f'--trader "{trader_path}" --dataset "{WORKSPACE}" --artifact-mode full --flat '
         f'--run-id "{run_id}" --output-root "{output_root}"'
     )
     completed = subprocess.run(["bash", "-lc", command], cwd=RUST_BACKTESTER, text=True)
@@ -178,12 +178,37 @@ def print_pnl_report(run_dir: Path) -> Dict[Optional[int], Dict[str, Any]]:
     return out
 
 
+def print_pepper_early_window_report(run_dir: Path, cutoff_ts: int = 100_000) -> None:
+    print("\n" + "=" * 80)
+    print(f"{PEPPER} — First {cutoff_ts:,} Timestamps")
+    print("=" * 80)
+    for path in sorted(run_dir.glob("*-bundle.json")):
+        with path.open() as f:
+            bundle = json.load(f)
+        day = bundle.get("run", {}).get("day")
+        timeline = bundle.get("timeline", [])
+        window = [row for row in timeline if row.get("timestamp", -1) <= cutoff_ts]
+        if not window:
+            print(f"Day {day}: no timeline rows in window")
+            continue
+        positions = [row.get("position", {}).get(PEPPER, 0) for row in window]
+        first_reach_80 = next((row.get("timestamp") for row in window if row.get("position", {}).get(PEPPER, 0) == 80), None)
+        pnl_100k = window[-1].get("pnl_by_product", {}).get(PEPPER, 0.0)
+        print(f"Day {day}")
+        print(f"  Average absolute position: {np.mean(np.abs(positions)):.4f}")
+        print(f"  Minimum position: {min(positions)}")
+        print(f"  Maximum position: {max(positions)}")
+        print(f"  Timestamp first reaches 80: {first_reach_80}")
+        print(f"  PnL through {cutoff_ts:,}: {pnl_100k:.2f}")
+
+
 def main() -> None:
     PLOTS_DIR.mkdir(parents=True, exist_ok=True)
     print("\n--- Running Round 1 backtest ---")
     run_dir = run_round1_backtest(TRADER_PATH)
     if run_dir:
         print_pnl_report(run_dir)
+        print_pepper_early_window_report(run_dir)
     else:
         print("Rust backtest did not complete; generating local signal plots only.")
 

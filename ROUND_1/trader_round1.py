@@ -23,14 +23,14 @@ PEPPER_HALF_SPREAD = 2
 PEPPER_BUY_EDGE = 10
 PEPPER_SELL_EDGE = 1
 PEPPER_SIZE = 20
-PEPPER_LATE_START = 990_000
-PEPPER_FINAL_UNWIND = 999_000
+PEPPER_LATE_START = 995_000
+PEPPER_FINAL_UNWIND = 1000000
 
 OSMIUM_BETA = -0.4952
 OSMIUM_EMA_ALPHA = 0.05
 OSMIUM_HALF_SPREAD = 1
 OSMIUM_TAKE_EDGE = 0
-OSMIUM_INV_SKEW = 0.00
+OSMIUM_INV_SKEW = 0.03
 OSMIUM_SIZE = 14
 
 LIMITS = {PEPPER: 80, OSMIUM: 80}
@@ -123,9 +123,9 @@ class Trader:
         best_bid, best_ask = self.best_bid_ask(depth)
 
         if timestamp < PEPPER_LATE_START:
-            target_position = int(0.85 * limit)
+            target_position = int(limit)
         elif timestamp < PEPPER_FINAL_UNWIND:
-            target_position = int(0.35 * limit)
+            target_position = 0
         else:
             target_position = 0
 
@@ -160,7 +160,7 @@ class Trader:
             ask_quote = math.ceil(fair + PEPPER_HALF_SPREAD)
             if best_ask is not None:
                 ask_quote = max(ask_quote, best_ask - 1)
-            ask_qty = min(PEPPER_SIZE, new_position - target_position, sell_cap)
+            ask_qty = min( new_position - target_position, sell_cap)
             if ask_qty > 0:
                 orders.append(Order(PEPPER, ask_quote, -ask_qty))
 
