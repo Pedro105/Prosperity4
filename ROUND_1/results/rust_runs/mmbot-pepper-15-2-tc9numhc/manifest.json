@@ -1,0 +1,39 @@
+{
+  "run_id": "mmbot-pepper-15-2-tc9numhc",
+  "trader": "pepper_15_2.py",
+  "dataset": "ROUND-1",
+  "results": [
+    {
+      "set": "D-2",
+      "day": -2,
+      "tick_count": 10000,
+      "own_trade_count": 639,
+      "final_pnl_total": 97300.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-pepper-15-2-tc9numhc/round-1-day-2-*"
+    },
+    {
+      "set": "D-1",
+      "day": -1,
+      "tick_count": 10000,
+      "own_trade_count": 649,
+      "final_pnl_total": 98202.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-pepper-15-2-tc9numhc/round-1-day-1-*"
+    },
+    {
+      "set": "day-0",
+      "day": 0,
+      "tick_count": 10000,
+      "own_trade_count": 677,
+      "final_pnl_total": 97398.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-pepper-15-2-tc9numhc/round-1-day-0-*"
+    },
+    {
+      "set": "SUB",
+      "day": 0,
+      "tick_count": 1000,
+      "own_trade_count": 103,
+      "final_pnl_total": 10311.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-pepper-15-2-tc9numhc/round-1-submission-day-0-*"
+    }
+  ]
+}

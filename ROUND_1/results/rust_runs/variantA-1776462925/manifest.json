@@ -1,0 +1,39 @@
+{
+  "run_id": "variantA-1776462925",
+  "trader": "trader_round2.py",
+  "dataset": "ROUND-1",
+  "results": [
+    {
+      "set": "D-2",
+      "day": -2,
+      "tick_count": 10000,
+      "own_trade_count": 510,
+      "final_pnl_total": 95607.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/variantA-1776462925/round-1-day-2-*"
+    },
+    {
+      "set": "D-1",
+      "day": -1,
+      "tick_count": 10000,
+      "own_trade_count": 524,
+      "final_pnl_total": 96045.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/variantA-1776462925/round-1-day-1-*"
+    },
+    {
+      "set": "day-0",
+      "day": 0,
+      "tick_count": 10000,
+      "own_trade_count": 516,
+      "final_pnl_total": 95936.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/variantA-1776462925/round-1-day-0-*"
+    },
+    {
+      "set": "SUB",
+      "day": 0,
+      "tick_count": 1000,
+      "own_trade_count": 87,
+      "final_pnl_total": 10514.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/variantA-1776462925/round-1-submission-day-0-*"
+    }
+  ]
+}

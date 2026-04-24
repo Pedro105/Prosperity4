@@ -1,0 +1,39 @@
+{
+  "run_id": "mmbot-osmium-next-1_0-2-r354xp73",
+  "trader": "var_1.0_2.py",
+  "dataset": "ROUND-1",
+  "results": [
+    {
+      "set": "D-2",
+      "day": -2,
+      "tick_count": 10000,
+      "own_trade_count": 573,
+      "final_pnl_total": 96868.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-osmium-next-1_0-2-r354xp73/round-1-day-2-*"
+    },
+    {
+      "set": "D-1",
+      "day": -1,
+      "tick_count": 10000,
+      "own_trade_count": 601,
+      "final_pnl_total": 97872.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-osmium-next-1_0-2-r354xp73/round-1-day-1-*"
+    },
+    {
+      "set": "day-0",
+      "day": 0,
+      "tick_count": 10000,
+      "own_trade_count": 593,
+      "final_pnl_total": 97055.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-osmium-next-1_0-2-r354xp73/round-1-day-0-*"
+    },
+    {
+      "set": "SUB",
+      "day": 0,
+      "tick_count": 1000,
+      "own_trade_count": 94,
+      "final_pnl_total": 10478.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-osmium-next-1_0-2-r354xp73/round-1-submission-day-0-*"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "run_id": "mmbot-1776362003749",
+  "trader": "trader_MMbot.py",
+  "dataset": "ROUND-1",
+  "results": [
+    {
+      "set": "D-2",
+      "day": -2,
+      "tick_count": 10000,
+      "own_trade_count": 639,
+      "final_pnl_total": 97300.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-1776362003749/round-1-day-2-*"
+    },
+    {
+      "set": "D-1",
+      "day": -1,
+      "tick_count": 10000,
+      "own_trade_count": 651,
+      "final_pnl_total": 98272.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-1776362003749/round-1-day-1-*"
+    },
+    {
+      "set": "day-0",
+      "day": 0,
+      "tick_count": 10000,
+      "own_trade_count": 679,
+      "final_pnl_total": 97418.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-1776362003749/round-1-day-0-*"
+    }
+  ]
+}

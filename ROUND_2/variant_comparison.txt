@@ -1,0 +1,26 @@
+Round 2 variant comparison
+============================
+
+baseline
+  pnl_mid_mark: 93082.00
+  pnl_maker_mark: 93085.51
+  trade_count: 623
+  own_volume: 3873
+  final_positions: {'INTARIAN_PEPPER_ROOT': 0, 'ASH_COATED_OSMIUM': 21}
+  pnl_by_product_mid: {'INTARIAN_PEPPER_ROOT': 0.0, 'ASH_COATED_OSMIUM': 209853.0}
+  pnl_by_product_maker: {'INTARIAN_PEPPER_ROOT': 0.0, 'ASH_COATED_OSMIUM': 209856.514326689}
+
+current
+  pnl_mid_mark: 94216.00
+  pnl_maker_mark: 94220.69
+  trade_count: 765
+  own_volume: 4678
+  final_positions: {'INTARIAN_PEPPER_ROOT': 0, 'ASH_COATED_OSMIUM': 28}
+  pnl_by_product_mid: {'INTARIAN_PEPPER_ROOT': 0.0, 'ASH_COATED_OSMIUM': 279804.0}
+  pnl_by_product_maker: {'INTARIAN_PEPPER_ROOT': 0.0, 'ASH_COATED_OSMIUM': 279808.68576891866}
+
+delta_current_minus_baseline
+  pnl_mid_mark: 1134.00
+  pnl_maker_mark: 1135.17
+  trade_count: 142
+  own_volume: 805

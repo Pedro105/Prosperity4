@@ -1,0 +1,39 @@
+{
+  "run_id": "mmbot-weak-candidate-k_a4lva7",
+  "trader": "candidate.py",
+  "dataset": "ROUND-1",
+  "results": [
+    {
+      "set": "D-2",
+      "day": -2,
+      "tick_count": 10000,
+      "own_trade_count": 604,
+      "final_pnl_total": 97113.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-weak-candidate-k_a4lva7/round-1-day-2-*"
+    },
+    {
+      "set": "D-1",
+      "day": -1,
+      "tick_count": 10000,
+      "own_trade_count": 629,
+      "final_pnl_total": 98170.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-weak-candidate-k_a4lva7/round-1-day-1-*"
+    },
+    {
+      "set": "day-0",
+      "day": 0,
+      "tick_count": 10000,
+      "own_trade_count": 627,
+      "final_pnl_total": 97020.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-weak-candidate-k_a4lva7/round-1-day-0-*"
+    },
+    {
+      "set": "SUB",
+      "day": 0,
+      "tick_count": 1000,
+      "own_trade_count": 97,
+      "final_pnl_total": 10448.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-weak-candidate-k_a4lva7/round-1-submission-day-0-*"
+    }
+  ]
+}

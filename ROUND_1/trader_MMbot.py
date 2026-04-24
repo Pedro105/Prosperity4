@@ -21,7 +21,7 @@ OSMIUM = "ASH_COATED_OSMIUM"
 # PEPPER_ROOT parameters (UNCHANGED from trader_round1.py)
 # -----------------------------------------------------------------------------
 # Derived from simple linear regression on day -2, -1, 0 mid-prices.
-PEPPER_SLOPE = 0.0010000612960100698
+PEPPER_SLOPE = 0.0012722395322395
 PEPPER_HALF_SPREAD = 2
 PEPPER_BUY_EDGE = 10
 PEPPER_SELL_EDGE = 1
@@ -46,11 +46,11 @@ OSMIUM_LEVEL_DISTANCE_PENALTY = 0.4
 
 # Fair value smoothing/robustness
 OSMIUM_MAKER_MID_EMA_ALPHA = 0.15  # smooth maker-mid to reduce flicker
-OSMIUM_MAKER_CONFIRM_TTL = 3  # keep last detected maker layer for a few ticks if book is sparse
+OSMIUM_MAKER_CONFIRM_TTL = 1  # keep last detected maker layer for a few ticks if book is sparse
 
 # Fallback fair model (matches existing trader_round1.py)
 OSMIUM_BETA = -0.4952
-OSMIUM_EMA_ALPHA = 0.05
+OSMIUM_EMA_ALPHA = 0.10
 OSMIUM_FALLBACK_MODE = "predicted"  # "predicted" (default) or "mid"
 
 # Trading parameters around fair
@@ -297,12 +297,16 @@ class Trader:
             memory["osmium_fair"] = float(mid)
             return float(mid)
 
+        bids, asks = self._osmium_ladders(depth, OSMIUM_MAX_LEVEL)
+        sparse_book = len(bids) < 2 or len(asks) < 2
         prev_mean = memory.get("osmium_mean")
         mean = mid if prev_mean is None else OSMIUM_EMA_ALPHA * mid + (1.0 - OSMIUM_EMA_ALPHA) * prev_mean
         predicted = mid + OSMIUM_BETA * (mid - mean)
+        last_maker = memory.get("osmium_maker_mid")
+        fair = max(predicted, float(last_maker)) if sparse_book and last_maker is not None else predicted
         memory["osmium_mean"] = float(mean)
-        memory["osmium_fair"] = float(predicted)
-        return float(predicted)
+        memory["osmium_fair"] = float(fair)
+        return float(fair)
 
     def compute_osmium_fair_value(self, depth: OrderDepth, memory: Dict[str, float]) -> Optional[float]:
         detected = self.detect_osmium_maker_layer(depth, memory)
@@ -344,3 +348,8 @@ class Trader:
         take, net = self.take_orders(OSMIUM, fair, OSMIUM_TAKE_THRESHOLD, depth, position)
         make = self.make_orders(OSMIUM, fair, depth, position, net, OSMIUM_QUOTE_HALF_SPREAD, OSMIUM_INV_SKEW)
         return take + make
+
+
+if __name__ == "__main__":
+    print("`trader_MMbot.py` is the uploadable core trader and does not print local diagnostics.")
+    print("Run `python3 ROUND_1/trader_MMbot_local.py` to execute the local backtest, print stats, and generate plots.")

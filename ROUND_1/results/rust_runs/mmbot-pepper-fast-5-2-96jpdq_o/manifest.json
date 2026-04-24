@@ -1,0 +1,39 @@
+{
+  "run_id": "mmbot-pepper-fast-5-2-96jpdq_o",
+  "trader": "pepper_5_2.py",
+  "dataset": "ROUND-1",
+  "results": [
+    {
+      "set": "D-2",
+      "day": -2,
+      "tick_count": 10000,
+      "own_trade_count": 643,
+      "final_pnl_total": 97079.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-pepper-fast-5-2-96jpdq_o/round-1-day-2-*"
+    },
+    {
+      "set": "D-1",
+      "day": -1,
+      "tick_count": 10000,
+      "own_trade_count": 654,
+      "final_pnl_total": 98024.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-pepper-fast-5-2-96jpdq_o/round-1-day-1-*"
+    },
+    {
+      "set": "day-0",
+      "day": 0,
+      "tick_count": 10000,
+      "own_trade_count": 679,
+      "final_pnl_total": 96931.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-pepper-fast-5-2-96jpdq_o/round-1-day-0-*"
+    },
+    {
+      "set": "SUB",
+      "day": 0,
+      "tick_count": 1000,
+      "own_trade_count": 105,
+      "final_pnl_total": 9601.0,
+      "run_dir": "/Users/pedropinto/Prosperity4/ROUND_1/results/rust_runs/mmbot-pepper-fast-5-2-96jpdq_o/round-1-submission-day-0-*"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "baseline": {
+    "total_pnl": 303535.0,
+    "fills": 2049,
+    "by_product": {
+      "INTARIAN_PEPPER_ROOT": 245690.0,
+      "ASH_COATED_OSMIUM": 57845.0
+    }
+  },
+  "rows": [
+    {
+      "OSMIUM_TAKE_THRESHOLD": 0,
+      "OSMIUM_MAKER_SYMMETRY_TOL": 1,
+      "total_pnl": 303535.0,
+      "fills": 2049,
+      "osmium_pnl": 57845.0,
+      "pepper_pnl": 245690.0
+    },
+    {
+      "OSMIUM_TAKE_THRESHOLD": 0,
+      "OSMIUM_MAKER_SYMMETRY_TOL": 2,
+      "total_pnl": 303535.0,
+      "fills": 2049,
+      "osmium_pnl": 57845.0,
+      "pepper_pnl": 245690.0
+    },
+    {
+      "OSMIUM_TAKE_THRESHOLD": 0,
+      "OSMIUM_MAKER_SYMMETRY_TOL": 3,
+      "total_pnl": 303535.0,
+      "fills": 2049,
+      "osmium_pnl": 57845.0,
+      "pepper_pnl": 245690.0
+    },
+    {
+      "OSMIUM_TAKE_THRESHOLD": 0.25,
+      "OSMIUM_MAKER_SYMMETRY_TOL": 1,
+      "total_pnl": 303350.0,
+      "fills": 2021,
+      "osmium_pnl": 57660.0,
+      "pepper_pnl": 245690.0
+    },
+    {
+      "OSMIUM_TAKE_THRESHOLD": 0.25,
+      "OSMIUM_MAKER_SYMMETRY_TOL": 2,
+      "total_pnl": 303350.0,
+      "fills": 2021,
+      "osmium_pnl": 57660.0,
+      "pepper_pnl": 245690.0
+    },
+    {
+      "OSMIUM_TAKE_THRESHOLD": 0.25,
+      "OSMIUM_MAKER_SYMMETRY_TOL": 3,
+      "total_pnl": 303350.0,
+      "fills": 2021,
+      "osmium_pnl": 57660.0,
+      "pepper_pnl": 245690.0
+    },
+    {
+      "OSMIUM_TAKE_THRESHOLD": 0.5,
+      "OSMIUM_MAKER_SYMMETRY_TOL": 1,
+      "total_pnl": 303273.0,
+      "fills": 1974,
+      "osmium_pnl": 57583.0,
+      "pepper_pnl": 245690.0
+    },
+    {
+      "OSMIUM_TAKE_THRESHOLD": 0.5,
+      "OSMIUM_MAKER_SYMMETRY_TOL": 2,
+      "total_pnl": 303273.0,
+      "fills": 1974,
+      "osmium_pnl": 57583.0,
+      "pepper_pnl": 245690.0
+    },
+    {
+      "OSMIUM_TAKE_THRESHOLD": 0.5,
+      "OSMIUM_MAKER_SYMMETRY_TOL": 3,
+      "total_pnl": 303273.0,
+      "fills": 1974,
+      "osmium_pnl": 57583.0,
+      "pepper_pnl": 245690.0
+    },
+    {
+      "OSMIUM_TAKE_THRESHOLD": 0.75,
+      "OSMIUM_MAKER_SYMMETRY_TOL": 1,
+      "total_pnl": 302743.0,
+      "fills": 1919,
+      "osmium_pnl": 57053.0,
+      "pepper_pnl": 245690.0
+    },
+    {
+      "OSMIUM_TAKE_THRESHOLD": 0.75,
+      "OSMIUM_MAKER_SYMMETRY_TOL": 2,
+      "total_pnl": 302743.0,
+      "fills": 1919,
+      "osmium_pnl": 57053.0,
+      "pepper_pnl": 245690.0
+    },
+    {
+      "OSMIUM_TAKE_THRESHOLD": 0.75,
+      "OSMIUM_MAKER_SYMMETRY_TOL": 3,
+      "total_pnl": 302743.0,
+      "fills": 1919,
+      "osmium_pnl": 57053.0,
+      "pepper_pnl": 245690.0
+    },
+    {
+      "OSMIUM_TAKE_THRESHOLD": 1.0,
+      "OSMIUM_MAKER_SYMMETRY_TOL": 1,
+      "total_pnl": 302273.0,
+      "fills": 1861,
+      "osmium_pnl": 56583.0,
+      "pepper_pnl": 245690.0
+    },
+    {
+      "OSMIUM_TAKE_THRESHOLD": 1.0,
+      "OSMIUM_MAKER_SYMMETRY_TOL": 2,
+      "total_pnl": 302273.0,
+      "fills": 1861,
+      "osmium_pnl": 56583.0,
+      "pepper_pnl": 245690.0
+    },
+    {
+      "OSMIUM_TAKE_THRESHOLD": 1.0,
+      "OSMIUM_MAKER_SYMMETRY_TOL": 3,
+      "total_pnl": 302273.0,
+      "fills": 1861,
+      "osmium_pnl": 56583.0,
+      "pepper_pnl": 245690.0
+    }
+  ],
+  "best": {
+    "OSMIUM_TAKE_THRESHOLD": 0,
+    "OSMIUM_MAKER_SYMMETRY_TOL": 1,
+    "total_pnl": 303535.0,
+    "fills": 2049,
+    "osmium_pnl": 57845.0,
+    "pepper_pnl": 245690.0
+  }
+}

@@ -1,0 +1,51 @@
+Round 2 analysis from ROUND_1/208495.log
+============================================================
+2a. PEPPER_SLOPE refit
+new_slope=0.0012722395322395
+intercept=11974.3156353646
+R2=0.0092452230
+old_slope=0.0012722395322395
+
+2b. PEPPER edge analysis
+buy_edge | sell_edge | opportunities | estimated_pnl
+      10 |         1 |            14 |       1132.82
+      10 |         2 |            14 |       1132.82
+      10 |         3 |            14 |       1132.82
+      10 |         5 |            14 |       1132.82
+       5 |         1 |            12 |        660.25
+       5 |         2 |            12 |        660.25
+       5 |         3 |            12 |        660.25
+       5 |         5 |            12 |        660.25
+       2 |         1 |            11 |        275.79
+       2 |         2 |            11 |        275.79
+       2 |         3 |            11 |        275.79
+       2 |         5 |            11 |        275.79
+       1 |         1 |            11 |        217.72
+       1 |         2 |            11 |        217.72
+       1 |         3 |            11 |        217.72
+       1 |         5 |            11 |        217.72
+best_combo=BUY 10, SELL 1
+
+2c. OSMIUM spread & fill analysis
+mean_spread=16.253829
+std_spread=2.696361
+pct_spread_eq_1=0.00%
+pct_spread_eq_2=0.00%
+pct_spread_gt_2=100.00%
+alpha=0.05: mean_mid_minus_ema=-0.002268, std_mid_minus_ema=430.524273, rmse_to_next_mid=453.183448
+alpha=0.15: mean_mid_minus_ema=0.002573, std_mid_minus_ema=395.481199, rmse_to_next_mid=465.272001
+better_alpha=0.05
+
+2d. MAF value estimation
+round1_final_pnl=10385.12
+estimated_full_flow_pnl=12981.41
+estimated_extra_value=2596.28
+recommended_maf_bid_range=[778.88, 1557.77]
+recommended_lower_bound_rounded=800
+
+2e. OSMIUM maker-layer quality check
+pct_detectable_L1=28.10%
+pct_detectable_L2=41.20%
+pct_detectable_L3=0.00%
+avg_abs_maker_mid_vs_raw_mid_deviation=0.462482
+

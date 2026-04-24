@@ -1,0 +1,42 @@
+{
+  "baseline": {
+    "total_pnl": 303535.0,
+    "fills": 2049,
+    "by_product": {
+      "INTARIAN_PEPPER_ROOT": 245690.0,
+      "ASH_COATED_OSMIUM": 57845.0
+    }
+  },
+  "sparse_mid_fallback": {
+    "total_pnl": 303142.0,
+    "fills": 2031,
+    "by_product": {
+      "INTARIAN_PEPPER_ROOT": 245690.0,
+      "ASH_COATED_OSMIUM": 57452.0
+    }
+  },
+  "sparse_max_pred_mid": {
+    "total_pnl": 303330.0,
+    "fills": 2040,
+    "by_product": {
+      "INTARIAN_PEPPER_ROOT": 245690.0,
+      "ASH_COATED_OSMIUM": 57640.0
+    }
+  },
+  "sparse_floor_last_maker": {
+    "total_pnl": 303621.0,
+    "fills": 2056,
+    "by_product": {
+      "INTARIAN_PEPPER_ROOT": 245690.0,
+      "ASH_COATED_OSMIUM": 57931.0
+    }
+  },
+  "sparse_fast_alpha": {
+    "total_pnl": 303252.0,
+    "fills": 2035,
+    "by_product": {
+      "INTARIAN_PEPPER_ROOT": 245690.0,
+      "ASH_COATED_OSMIUM": 57562.0
+    }
+  }
+}

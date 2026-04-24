@@ -1,0 +1,17 @@
+Round 2 visualization summary
+================================
+
+INTARIAN_PEPPER_ROOT
+  mean spread: 14.122
+  median spread: 14.000
+  mean abs 1-tick return: 41.1906
+  trade count: 996
+  total traded quantity: 5033
+
+ASH_COATED_OSMIUM
+  mean spread: 16.234
+  median spread: 16.000
+  mean abs 1-tick return: 37.5531
+  trade count: 1395
+  total traded quantity: 7127
+

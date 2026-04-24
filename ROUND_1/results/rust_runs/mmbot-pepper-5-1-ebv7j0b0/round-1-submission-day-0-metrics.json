@@ -1,0 +1,20 @@
+{
+  "dataset_id": "official_submission_208495_alltrades",
+  "dataset_path": "/Users/pedropinto/Prosperity4/ROUND_1/208495.json",
+  "day": 0,
+  "final_pnl_by_product": {
+    "ASH_COATED_OSMIUM": 2960.0,
+    "INTARIAN_PEPPER_ROOT": 6641.0
+  },
+  "final_pnl_total": 9601.0,
+  "generated_at": "2026-04-16T21:17:21+00:00",
+  "matching": {
+    "price_slippage_bps": 0.0,
+    "queue_penetration": 1.0,
+    "trade_match_mode": "all"
+  },
+  "own_trade_count": 105,
+  "run_id": "mmbot-pepper-5-1-ebv7j0b0-round-1-submission-day-0",
+  "tick_count": 1000,
+  "trader_path": "/private/var/folders/_k/yr8p0nt93nzcr6lxtx5yz_8r0000gn/T/mmbot_tune_3smbpf11/pepper_5_1.py"
+}

@@ -1,0 +1,373 @@
+{
+  "baseline": {
+    "run_id": "mmbot-baseline-87y0lcf6",
+    "total_pnl": 292990.0,
+    "fills": 1969,
+    "metrics": [
+      {
+        "dataset_id": "prices_round_1_day_0",
+        "dataset_path": "/Users/pedropinto/Prosperity4/ROUND_1/prices_round_1_day_0.csv",
+        "day": 0,
+        "final_pnl_by_product": {
+          "ASH_COATED_OSMIUM": 17948.0,
+          "INTARIAN_PEPPER_ROOT": 79470.0
+        },
+        "final_pnl_total": 97418.0,
+        "generated_at": "2026-04-16T21:14:38+00:00",
+        "matching": {
+          "price_slippage_bps": 0.0,
+          "queue_penetration": 1.0,
+          "trade_match_mode": "all"
+        },
+        "own_trade_count": 679,
+        "run_id": "mmbot-baseline-87y0lcf6-round-1-day-0",
+        "tick_count": 10000,
+        "trader_path": "/private/var/folders/_k/yr8p0nt93nzcr6lxtx5yz_8r0000gn/T/mmbot_tune_3smbpf11/trader_baseline.py"
+      },
+      {
+        "dataset_id": "prices_round_1_day_-1",
+        "dataset_path": "/Users/pedropinto/Prosperity4/ROUND_1/prices_round_1_day_-1.csv",
+        "day": -1,
+        "final_pnl_by_product": {
+          "ASH_COATED_OSMIUM": 18968.0,
+          "INTARIAN_PEPPER_ROOT": 79304.0
+        },
+        "final_pnl_total": 98272.0,
+        "generated_at": "2026-04-16T21:14:33+00:00",
+        "matching": {
+          "price_slippage_bps": 0.0,
+          "queue_penetration": 1.0,
+          "trade_match_mode": "all"
+        },
+        "own_trade_count": 651,
+        "run_id": "mmbot-baseline-87y0lcf6-round-1-day-1",
+        "tick_count": 10000,
+        "trader_path": "/private/var/folders/_k/yr8p0nt93nzcr6lxtx5yz_8r0000gn/T/mmbot_tune_3smbpf11/trader_baseline.py"
+      },
+      {
+        "dataset_id": "prices_round_1_day_-2",
+        "dataset_path": "/Users/pedropinto/Prosperity4/ROUND_1/prices_round_1_day_-2.csv",
+        "day": -2,
+        "final_pnl_by_product": {
+          "ASH_COATED_OSMIUM": 17739.0,
+          "INTARIAN_PEPPER_ROOT": 79561.0
+        },
+        "final_pnl_total": 97300.0,
+        "generated_at": "2026-04-16T21:14:29+00:00",
+        "matching": {
+          "price_slippage_bps": 0.0,
+          "queue_penetration": 1.0,
+          "trade_match_mode": "all"
+        },
+        "own_trade_count": 639,
+        "run_id": "mmbot-baseline-87y0lcf6-round-1-day-2",
+        "tick_count": 10000,
+        "trader_path": "/private/var/folders/_k/yr8p0nt93nzcr6lxtx5yz_8r0000gn/T/mmbot_tune_3smbpf11/trader_baseline.py"
+      }
+    ]
+  },
+  "new_slope": 0.0012722395322395,
+  "intercept": 11974.315635364645,
+  "pepper_rows": [
+    {
+      "PEPPER_BUY_EDGE": 10,
+      "PEPPER_SELL_EDGE": 1,
+      "total_pnl": 303305.0,
+      "fills": 2070
+    },
+    {
+      "PEPPER_BUY_EDGE": 10,
+      "PEPPER_SELL_EDGE": 2,
+      "total_pnl": 303305.0,
+      "fills": 2070
+    },
+    {
+      "PEPPER_BUY_EDGE": 10,
+      "PEPPER_SELL_EDGE": 3,
+      "total_pnl": 303305.0,
+      "fills": 2070
+    },
+    {
+      "PEPPER_BUY_EDGE": 10,
+      "PEPPER_SELL_EDGE": 5,
+      "total_pnl": 303305.0,
+      "fills": 2070
+    },
+    {
+      "PEPPER_BUY_EDGE": 15,
+      "PEPPER_SELL_EDGE": 1,
+      "total_pnl": 303211.0,
+      "fills": 2068
+    },
+    {
+      "PEPPER_BUY_EDGE": 15,
+      "PEPPER_SELL_EDGE": 2,
+      "total_pnl": 303211.0,
+      "fills": 2068
+    },
+    {
+      "PEPPER_BUY_EDGE": 15,
+      "PEPPER_SELL_EDGE": 3,
+      "total_pnl": 303211.0,
+      "fills": 2068
+    },
+    {
+      "PEPPER_BUY_EDGE": 15,
+      "PEPPER_SELL_EDGE": 5,
+      "total_pnl": 303211.0,
+      "fills": 2068
+    },
+    {
+      "PEPPER_BUY_EDGE": 5,
+      "PEPPER_SELL_EDGE": 1,
+      "total_pnl": 301635.0,
+      "fills": 2081
+    },
+    {
+      "PEPPER_BUY_EDGE": 5,
+      "PEPPER_SELL_EDGE": 2,
+      "total_pnl": 301635.0,
+      "fills": 2081
+    },
+    {
+      "PEPPER_BUY_EDGE": 5,
+      "PEPPER_SELL_EDGE": 3,
+      "total_pnl": 301635.0,
+      "fills": 2081
+    },
+    {
+      "PEPPER_BUY_EDGE": 5,
+      "PEPPER_SELL_EDGE": 5,
+      "total_pnl": 301635.0,
+      "fills": 2081
+    },
+    {
+      "PEPPER_BUY_EDGE": 2,
+      "PEPPER_SELL_EDGE": 3,
+      "total_pnl": 299643.0,
+      "fills": 2087
+    },
+    {
+      "PEPPER_BUY_EDGE": 2,
+      "PEPPER_SELL_EDGE": 5,
+      "total_pnl": 299643.0,
+      "fills": 2087
+    },
+    {
+      "PEPPER_BUY_EDGE": 2,
+      "PEPPER_SELL_EDGE": 1,
+      "total_pnl": 290679.0,
+      "fills": 1979
+    },
+    {
+      "PEPPER_BUY_EDGE": 2,
+      "PEPPER_SELL_EDGE": 2,
+      "total_pnl": 290679.0,
+      "fills": 1979
+    },
+    {
+      "PEPPER_BUY_EDGE": 1,
+      "PEPPER_SELL_EDGE": 1,
+      "total_pnl": 290235.0,
+      "fills": 1980
+    },
+    {
+      "PEPPER_BUY_EDGE": 1,
+      "PEPPER_SELL_EDGE": 2,
+      "total_pnl": 290235.0,
+      "fills": 1980
+    },
+    {
+      "PEPPER_BUY_EDGE": 1,
+      "PEPPER_SELL_EDGE": 3,
+      "total_pnl": 290235.0,
+      "fills": 1980
+    },
+    {
+      "PEPPER_BUY_EDGE": 1,
+      "PEPPER_SELL_EDGE": 5,
+      "total_pnl": 290235.0,
+      "fills": 1980
+    }
+  ],
+  "best_pepper": {
+    "PEPPER_BUY_EDGE": 10,
+    "PEPPER_SELL_EDGE": 1,
+    "total_pnl": 303305.0,
+    "fills": 2070
+  },
+  "osmium_rows": [
+    {
+      "OSMIUM_EMA_ALPHA": 0.1,
+      "OSMIUM_MAKER_CONFIRM_TTL": 1,
+      "total_pnl": 303535.0
+    },
+    {
+      "OSMIUM_EMA_ALPHA": 0.05,
+      "OSMIUM_MAKER_CONFIRM_TTL": 5,
+      "total_pnl": 303532.0
+    },
+    {
+      "OSMIUM_EMA_ALPHA": 0.1,
+      "OSMIUM_MAKER_CONFIRM_TTL": 5,
+      "total_pnl": 303532.0
+    },
+    {
+      "OSMIUM_EMA_ALPHA": 0.15,
+      "OSMIUM_MAKER_CONFIRM_TTL": 5,
+      "total_pnl": 303532.0
+    },
+    {
+      "OSMIUM_EMA_ALPHA": 0.25,
+      "OSMIUM_MAKER_CONFIRM_TTL": 5,
+      "total_pnl": 303532.0
+    },
+    {
+      "OSMIUM_EMA_ALPHA": 0.15,
+      "OSMIUM_MAKER_CONFIRM_TTL": 1,
+      "total_pnl": 303478.5
+    },
+    {
+      "OSMIUM_EMA_ALPHA": 0.05,
+      "OSMIUM_MAKER_CONFIRM_TTL": 1,
+      "total_pnl": 303470.0
+    },
+    {
+      "OSMIUM_EMA_ALPHA": 0.25,
+      "OSMIUM_MAKER_CONFIRM_TTL": 2,
+      "total_pnl": 303313.0
+    },
+    {
+      "OSMIUM_EMA_ALPHA": 0.25,
+      "OSMIUM_MAKER_CONFIRM_TTL": 3,
+      "total_pnl": 303310.0
+    },
+    {
+      "OSMIUM_EMA_ALPHA": 0.1,
+      "OSMIUM_MAKER_CONFIRM_TTL": 2,
+      "total_pnl": 303309.0
+    },
+    {
+      "OSMIUM_EMA_ALPHA": 0.05,
+      "OSMIUM_MAKER_CONFIRM_TTL": 3,
+      "total_pnl": 303305.0
+    },
+    {
+      "OSMIUM_EMA_ALPHA": 0.1,
+      "OSMIUM_MAKER_CONFIRM_TTL": 3,
+      "total_pnl": 303305.0
+    },
+    {
+      "OSMIUM_EMA_ALPHA": 0.15,
+      "OSMIUM_MAKER_CONFIRM_TTL": 3,
+      "total_pnl": 303305.0
+    },
+    {
+      "OSMIUM_EMA_ALPHA": 0.05,
+      "OSMIUM_MAKER_CONFIRM_TTL": 2,
+      "total_pnl": 303287.0
+    },
+    {
+      "OSMIUM_EMA_ALPHA": 0.15,
+      "OSMIUM_MAKER_CONFIRM_TTL": 2,
+      "total_pnl": 303282.0
+    },
+    {
+      "OSMIUM_EMA_ALPHA": 0.25,
+      "OSMIUM_MAKER_CONFIRM_TTL": 1,
+      "total_pnl": 303252.0
+    }
+  ],
+  "best_osmium": {
+    "OSMIUM_EMA_ALPHA": 0.1,
+    "OSMIUM_MAKER_CONFIRM_TTL": 1,
+    "total_pnl": 303535.0
+  },
+  "final": {
+    "run_id": "mmbot-final-5igkzr_7",
+    "total_pnl": 303535.0,
+    "fills": 2049,
+    "metrics": [
+      {
+        "dataset_id": "prices_round_1_day_0",
+        "dataset_path": "/Users/pedropinto/Prosperity4/ROUND_1/prices_round_1_day_0.csv",
+        "day": 0,
+        "final_pnl_by_product": {
+          "ASH_COATED_OSMIUM": 17918.0,
+          "INTARIAN_PEPPER_ROOT": 79450.0
+        },
+        "final_pnl_total": 97368.0,
+        "generated_at": "2026-04-16T21:28:53+00:00",
+        "matching": {
+          "price_slippage_bps": 0.0,
+          "queue_penetration": 1.0,
+          "trade_match_mode": "all"
+        },
+        "own_trade_count": 670,
+        "run_id": "mmbot-final-5igkzr_7-round-1-day-0",
+        "tick_count": 10000,
+        "trader_path": "/private/var/folders/_k/yr8p0nt93nzcr6lxtx5yz_8r0000gn/T/mmbot_tune_3smbpf11/trader_final.py"
+      },
+      {
+        "dataset_id": "prices_round_1_day_-1",
+        "dataset_path": "/Users/pedropinto/Prosperity4/ROUND_1/prices_round_1_day_-1.csv",
+        "day": -1,
+        "final_pnl_by_product": {
+          "ASH_COATED_OSMIUM": 18965.0,
+          "INTARIAN_PEPPER_ROOT": 79268.0
+        },
+        "final_pnl_total": 98233.0,
+        "generated_at": "2026-04-16T21:28:48+00:00",
+        "matching": {
+          "price_slippage_bps": 0.0,
+          "queue_penetration": 1.0,
+          "trade_match_mode": "all"
+        },
+        "own_trade_count": 643,
+        "run_id": "mmbot-final-5igkzr_7-round-1-day-1",
+        "tick_count": 10000,
+        "trader_path": "/private/var/folders/_k/yr8p0nt93nzcr6lxtx5yz_8r0000gn/T/mmbot_tune_3smbpf11/trader_final.py"
+      },
+      {
+        "dataset_id": "prices_round_1_day_-2",
+        "dataset_path": "/Users/pedropinto/Prosperity4/ROUND_1/prices_round_1_day_-2.csv",
+        "day": -2,
+        "final_pnl_by_product": {
+          "ASH_COATED_OSMIUM": 17915.0,
+          "INTARIAN_PEPPER_ROOT": 79561.0
+        },
+        "final_pnl_total": 97476.0,
+        "generated_at": "2026-04-16T21:28:44+00:00",
+        "matching": {
+          "price_slippage_bps": 0.0,
+          "queue_penetration": 1.0,
+          "trade_match_mode": "all"
+        },
+        "own_trade_count": 635,
+        "run_id": "mmbot-final-5igkzr_7-round-1-day-2",
+        "tick_count": 10000,
+        "trader_path": "/private/var/folders/_k/yr8p0nt93nzcr6lxtx5yz_8r0000gn/T/mmbot_tune_3smbpf11/trader_final.py"
+      },
+      {
+        "dataset_id": "official_submission_208495_alltrades",
+        "dataset_path": "/Users/pedropinto/Prosperity4/ROUND_1/208495.json",
+        "day": 0,
+        "final_pnl_by_product": {
+          "ASH_COATED_OSMIUM": 3047.0,
+          "INTARIAN_PEPPER_ROOT": 7411.0
+        },
+        "final_pnl_total": 10458.0,
+        "generated_at": "2026-04-16T21:28:57+00:00",
+        "matching": {
+          "price_slippage_bps": 0.0,
+          "queue_penetration": 1.0,
+          "trade_match_mode": "all"
+        },
+        "own_trade_count": 101,
+        "run_id": "mmbot-final-5igkzr_7-round-1-submission-day-0",
+        "tick_count": 1000,
+        "trader_path": "/private/var/folders/_k/yr8p0nt93nzcr6lxtx5yz_8r0000gn/T/mmbot_tune_3smbpf11/trader_final.py"
+      }
+    ]
+  }
+}
